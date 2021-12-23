@@ -162,7 +162,7 @@ public class Events {
                     drawTexturedRectangle(x, (display.size() * step) + y + 2, 0, 27, size * 2, 5, 32, 5, 64);
                 }
                 //Skill group title
-                if (ClientConfig.RENDER_CONFIG.endurance.renderTitle) //Config toggle for skill_group.title
+                if (ClientConfig.RENDER_CONFIG.skillGroup.renderTitle) //Config toggle for skill_group.title
                 { renderText(TextHelper.translate("skill_group.title"), x, y - 2, 0.5D, 0xFFFFFF); }
                 GlStateManager.scale(mSize, mSize, mSize);
                 GlStateManager.popMatrix();
