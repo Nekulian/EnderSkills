@@ -203,11 +203,17 @@ public class Events {
                     }
                     if (ClientConfig.RENDER_CONFIG.skillGroup.renderControls && skill.getProperties().isKeyBound() && i < KeyBounds.skillUseList.size()) {
                         KeyBinding binding = KeyBounds.skillUseList.get(i);
-                        String control = binding.getKeyModifier().getLocalizedComboName(binding.getKeyCode());
-                        renderText(control, x, y + 14, 0.3D, hasCool ? 0x8C605D : 8453920);
+                        if (ClientConfig.RENDER_CONFIG.skillGroup.renderModifier) //config toggle for skill_group.renderModifier
+                        { String control = binding.getKeyModifier().getLocalizedComboName(binding.getKeyCode());
+                        renderText(control, x, y + 14, 0.3D, hasCool ? 0x8C605D : 8453920); }
+
+                        else
+                        { String control = binding.getKeyModifier().getLocalizedComboName(binding.getKeyCode());
+                          String controlLastChar = control.substring(control.length() -1);
+                        renderText(controlLastChar, x, y + 14, 0.3D, hasCool ? 0x8C605D : 8453920); }
                     }
                     if (hasCool && info != null) {
-                        if (ClientConfig.RENDER_CONFIG.skillGroup.renderDenominator)
+                        if (ClientConfig.RENDER_CONFIG.skillGroup.renderDenominator) //Config toggle for skill_group.renderDenominator
                         { renderText(TextHelper.translate("cooldown.timer", cool), x + 1, y + 1, 0.5D, 0xFFFFFF); }
                         else
                         { renderText(TextHelper.translate("cooldown.timer.noDenominator", cool), x + 1, y + 1, 0.5D, 0xFFFFFF); }

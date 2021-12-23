@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        maven { url = "https://maven.minecraftforge.net" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -76,10 +76,4 @@ reobf {
 
 artifacts {
     archives shadowJar
-}
-
-sourceSets {
-    main {
-        output.resourcesDir = output.classesDir
-    }
 }
